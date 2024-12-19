@@ -7,9 +7,15 @@ interface AuthLayoutProps {
 
 const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
   return (
-    <div>
-      <div>AuthLayout</div>
-      {children}
+    <div className="flex w-4/5 mx-auto  h-screen">
+      <div className="w-1/2 bg-cover bg-center">
+        <div>
+          <img className="w-screen" src="../public/img/signin.jpg" alt="" />
+        </div>
+      </div>
+      <div className="w-1/2 flex flex-col  items-center ">
+        {children}
+      </div>
     </div>
   );
 };
