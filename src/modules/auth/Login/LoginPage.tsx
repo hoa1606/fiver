@@ -32,12 +32,14 @@ const LoginPage = () => {
   const { mutate: handleLogin, isLoading  } = useMutation({
     mutationFn: (body: FormValues) => userApi.login(body),
     onSuccess: (currentUser) => {
-      dispatch(setCurrentUser(currentUser));
+      dispatch(setCurrentUser(currentUser))
+      currentUser.user.role === 'ADMIN' ? navigate(PATH.ADMIN.ROOT) : navigate(PATH.HOME);
     },
   });
 
   const onSubmit = (formValues: FormValues) => {
     handleLogin(formValues);
+    console.log(formValues);
   };
 
   return (
@@ -73,7 +75,6 @@ const LoginPage = () => {
           <TextField
             {...register("email")}
             fullWidth
-            placeholder="Enter your email"
             label="Email"
             name="email"
             variant="outlined"
@@ -81,7 +82,6 @@ const LoginPage = () => {
           <TextField
             {...register("password")}
             fullWidth
-            placeholder="Enter your password"
             label="Password"
             name="password"
             type="password"
