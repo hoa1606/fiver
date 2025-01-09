@@ -6,6 +6,9 @@ import RegisterPage from "../modules/auth/Register/RegisterPage";
 import { MainLayout } from "../layout/MainLayout";
 import { HomePage } from "../modules/home/HomePage";
 import { AdminLayout } from "../layout/AdminLayout";
+import { Categories } from "../modules/home/Categories";
+import WorkDetail from "../modules/home/WorkDeatil/workdetail";
+
 
 const useRouteElemenst = () => {
   const routes = useRoutes([
@@ -41,6 +44,22 @@ const useRouteElemenst = () => {
           element: (
             <MainLayout>
               <HomePage />
+            </MainLayout>
+          ),
+        },
+        {
+          path: "/categories",
+          element: (
+            <MainLayout>
+              <Categories />
+            </MainLayout>
+          ),
+        },
+        {
+          path: "/categories/detail/:id",
+          element: (
+            <MainLayout>
+              <WorkDetail/>
             </MainLayout>
           ),
         },

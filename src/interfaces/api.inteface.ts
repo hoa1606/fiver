@@ -3,3 +3,8 @@ export interface ApiReponse<T> {
     content:    T;
     dateTime:   Date
 }
+
+export interface ApiWork<T>{
+    statusCode: number;
+    content: T
+}

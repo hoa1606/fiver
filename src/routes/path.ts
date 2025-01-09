@@ -10,4 +10,6 @@ export const PATH = {
         ROOT: '/admin',
         USER_MANAGERMENT: '/admin/user-managerment',
     },
+    Categories: '/categories',
+    WorkDeatil: '/categories/detail'
 };
