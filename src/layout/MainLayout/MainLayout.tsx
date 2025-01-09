@@ -33,7 +33,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     const fetchWorkList = async () => {
       try {
         const data = await WorkListApi.getMenuLoaiCongViec();
-        setWorkItems(data.items || []); 
+        setWorkItems(data.content || []); 
         setLoading(false);
       } catch (error) {
         setError('Không thể lấy danh sách công việc.');
@@ -93,7 +93,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             <Button color="inherit" href="/become-seller">
               Become a Seller
             </Button>
-            <Button color="inherit" href="/login">
+            <Button color="inherit" href="/auth/login">
               Sign In
             </Button>
             <Button variant="contained" color="success" href="/register">
