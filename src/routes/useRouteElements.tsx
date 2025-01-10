@@ -71,8 +71,37 @@ const useRouteElemenst = () => {
         element: <Outlet/>,
         children: [
             {
-                path: PATH.ADMIN.USER_MANAGERMENT,
-            }
+              path: PATH.ADMIN.USER_MANAGERMENT,
+              element: (
+                <AdminLayout>
+                  <div>USER_MANAGERMENT</div>
+                </AdminLayout>
+              ),
+            },
+            {
+              path: PATH.ADMIN.WORK_MANAGERMENT,
+              element: (
+                <AdminLayout>
+                  <div>WORK_MANAGERMENT</div>
+                </AdminLayout>
+              ),
+            },
+            {
+              path: PATH.ADMIN.TYPE_WORK_MANAGERMENT,
+              element: (
+                <AdminLayout>
+                  <div>TYPE_WORK_MANAGERMENT</div>
+                </AdminLayout>
+              ),
+            },
+            {
+              path: PATH.ADMIN.SERVICE_MANAGERMENT,
+              element: (
+                <AdminLayout>
+                  <div>SERVICE_MANAGERMENT</div>
+                </AdminLayout>
+              ),
+            },
         ]
     }
   ]);

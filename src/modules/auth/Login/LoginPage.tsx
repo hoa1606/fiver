@@ -33,7 +33,7 @@ const LoginPage = () => {
     mutationFn: (body: FormValues) => userApi.login(body),
     onSuccess: (currentUser) => {
       dispatch(setCurrentUser(currentUser))
-      currentUser.user.role === 'ADMIN' ? navigate(PATH.ADMIN.ROOT) : navigate(PATH.HOME);
+      currentUser.user.role === 'ADMIN' ? navigate(PATH.ADMIN.USER_MANAGERMENT) : navigate(PATH.HOME);
     },
   });
 
