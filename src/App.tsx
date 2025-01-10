@@ -1,8 +1,7 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useEffect } from "react";
 import "./App.css";
 import useRouteElemenst from "./routes/useRouteElements";
+import { adminApi } from "./apis/admin.api";
 
 function App() {
   const { routes } = useRouteElemenst();

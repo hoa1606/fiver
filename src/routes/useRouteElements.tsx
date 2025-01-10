@@ -8,6 +8,8 @@ import { HomePage } from "../modules/home/HomePage";
 import { AdminLayout } from "../layout/AdminLayout";
 import { Categories } from "../modules/home/Categories";
 import WorkDetail from "../modules/home/WorkDeatil/workdetail";
+import { UserList, UserManagerment } from "../modules/admin/UserManagerment";
+import UserManagermant from "../modules/admin/UserManagerment/UserManagerment";
 
 
 const useRouteElemenst = () => {
@@ -74,7 +76,7 @@ const useRouteElemenst = () => {
               path: PATH.ADMIN.USER_MANAGERMENT,
               element: (
                 <AdminLayout>
-                  <div>USER_MANAGERMENT</div>
+                  <UserManagermant/>
                 </AdminLayout>
               ),
             },
