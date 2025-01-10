@@ -30,7 +30,7 @@ import useOpen from "../../../hooks/useOpen";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { adminApi } from "../../../apis/admin.api";
 
-const UserManagermant = () => {
+const ServiceManagerment = () => {
   const [page, setPage] = useState(1);
 
   const { open, handleClickOpen, onClose } = useOpen();
@@ -50,7 +50,7 @@ const UserManagermant = () => {
 
   const { data, isLoading, isError, error } = useQuery(
     ["userList", page], // queryKey
-    () => adminApi.getUserListPagination({ page, pageSize: 10 })
+    () => adminApi.getServiceListPagination({ page, pageSize: 10 })
   );
 
   const { mutate} = useMutation({
@@ -158,17 +158,10 @@ const UserManagermant = () => {
             {data?.data.map((user) => {
               return (
                 <TableRow key={user.id}>
-                  <TableCell>{user.name}</TableCell>
-                  <TableCell>{user.email}</TableCell>
-                  <TableCell>
-                    <img
-                      src={user.avatar}
-                      alt="User Avatar"
-                      style={{ width: 50, height: 50,}}
-                    />
-                  </TableCell>
-                  <TableCell>{user.role}</TableCell>
-
+                  <TableCell>{user.maCongViec}</TableCell>
+                  <TableCell>{user.maNguoiThue}</TableCell>
+                  <TableCell>{user.ngayThue}</TableCell>
+                  <TableCell>{user.hoanThanh ? 'Hoàn thành' : 'Chưa hoàn thành'}</TableCell>
                   <TableCell>
                     <Stack direction="row" spacing={2}>
                       <IconButton
@@ -273,4 +266,4 @@ const UserManagermant = () => {
   );
 };
 
-export default UserManagermant;
+export default ServiceManagerment;

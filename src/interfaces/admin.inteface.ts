@@ -21,8 +21,28 @@ export interface useManagermentInteface {
     bookingJob:    string[];
 }
 
-export interface UserRequestBody{
-    pageIndex: number;
-    pageSize:  number;
+export interface workManagermentInteface{
+    id:                    number;
+    tenCongViec:           string;
+    danhGia:               number;
+    giaTien:               number;
+    nguoiTao:              number;
+    hinhAnh:               string;
+    moTa:                  string;
+    maChiTietLoaiCongViec: number;
+    moTaNgan:              string;
+    saoCongViec:           number;
 }
 
+export interface typeWorkManagermentInteface{
+    id:              number;
+    tenLoaiCongViec: string;
+}
+
+export interface serviceManagermentInteface{
+    id:          number;
+    maCongViec:  number;
+    maNguoiThue: number;
+    ngayThue:    string;
+    hoanThanh:   boolean;
+}

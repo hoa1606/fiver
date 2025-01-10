@@ -1,5 +1,6 @@
 export interface ApiReponse<T> {
     statusCode: number;
+    message?: string;
     content:    T;
     dateTime:   Date
 }

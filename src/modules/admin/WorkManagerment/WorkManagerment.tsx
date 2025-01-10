@@ -30,7 +30,7 @@ import useOpen from "../../../hooks/useOpen";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { adminApi } from "../../../apis/admin.api";
 
-const UserManagermant = () => {
+const WorkManagerment = () => {
   const [page, setPage] = useState(1);
 
   const { open, handleClickOpen, onClose } = useOpen();
@@ -50,7 +50,7 @@ const UserManagermant = () => {
 
   const { data, isLoading, isError, error } = useQuery(
     ["userList", page], // queryKey
-    () => adminApi.getUserListPagination({ page, pageSize: 10 })
+    () => adminApi.getWordListPagination({ page, pageSize: 10 })
   );
 
   const { mutate} = useMutation({
@@ -140,7 +140,7 @@ const UserManagermant = () => {
             setDataEdit(null);
           }}
         >
-          Add user
+          Add word
         </Button>
       </Stack>
 
@@ -148,26 +148,26 @@ const UserManagermant = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell sx={{ width: 200 }}>Name</TableCell>
-              <TableCell sx={{ width: 120 }}>Email</TableCell>
-              <TableCell sx={{ width: 120 }}>Avata</TableCell>
-              <TableCell>Role</TableCell>
+              <TableCell sx={{ width: 300 }}>Tên công việc</TableCell>
+              <TableCell sx={{ width: 520 }}>MainLayoutô tả</TableCell>
+              <TableCell sx={{ width: 120 }}>Hình ảnh</TableCell>
+              <TableCell>Giá tiền</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {data?.data.map((user) => {
               return (
                 <TableRow key={user.id}>
-                  <TableCell>{user.name}</TableCell>
-                  <TableCell>{user.email}</TableCell>
+                  <TableCell>{user.tenCongViec}</TableCell>
+                  <TableCell>{user.moTaNgan}</TableCell>
                   <TableCell>
                     <img
-                      src={user.avatar}
+                      src={user.hinhAnh}
                       alt="User Avatar"
                       style={{ width: 50, height: 50,}}
                     />
                   </TableCell>
-                  <TableCell>{user.role}</TableCell>
+                  <TableCell>{user.giaTien}</TableCell>
 
                   <TableCell>
                     <Stack direction="row" spacing={2}>
@@ -273,4 +273,4 @@ const UserManagermant = () => {
   );
 };
 
-export default UserManagermant;
+export default WorkManagerment;

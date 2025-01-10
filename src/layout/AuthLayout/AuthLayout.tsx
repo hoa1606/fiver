@@ -10,7 +10,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
     <div className="flex w-4/5 mx-auto  h-screen">
       <div className="w-1/2 bg-cover bg-center">
         <div>
-          <img className="w-screen" src="../public/img/signin.jpg" alt="" />
+          <img className="w-screen" src="../public/hinhanh/signin.jpg" alt="" />
         </div>
       </div>
       <div className="w-1/2 flex flex-col  items-center ">

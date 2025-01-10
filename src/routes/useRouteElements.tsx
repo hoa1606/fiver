@@ -10,6 +10,9 @@ import { Categories } from "../modules/home/Categories";
 import WorkDetail from "../modules/home/WorkDeatil/workdetail";
 import { UserList, UserManagerment } from "../modules/admin/UserManagerment";
 import UserManagermant from "../modules/admin/UserManagerment/UserManagerment";
+import WorkManagerment from "../modules/admin/WorkManagerment/WorkManagerment";
+import { TypeWorkManagerment } from "../modules/admin/TypeWorkManagerment";
+import { ServiceManagerment } from "../modules/admin/ServiceManagerment";
 
 
 const useRouteElemenst = () => {
@@ -84,7 +87,7 @@ const useRouteElemenst = () => {
               path: PATH.ADMIN.WORK_MANAGERMENT,
               element: (
                 <AdminLayout>
-                  <div>WORK_MANAGERMENT</div>
+                  <WorkManagerment/>
                 </AdminLayout>
               ),
             },
@@ -92,7 +95,7 @@ const useRouteElemenst = () => {
               path: PATH.ADMIN.TYPE_WORK_MANAGERMENT,
               element: (
                 <AdminLayout>
-                  <div>TYPE_WORK_MANAGERMENT</div>
+                  <TypeWorkManagerment/>
                 </AdminLayout>
               ),
             },
@@ -100,7 +103,7 @@ const useRouteElemenst = () => {
               path: PATH.ADMIN.SERVICE_MANAGERMENT,
               element: (
                 <AdminLayout>
-                  <div>SERVICE_MANAGERMENT</div>
+                  <ServiceManagerment/>
                 </AdminLayout>
               ),
             },
