@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Box, Typography, Card, CardMedia, CardContent, CircularProgress } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Card,
+  CardMedia,
+  CardContent,
+  Avatar,
+  CircularProgress,
+  Rating,
+} from "@mui/material";
 import { WorkApi } from "../../../apis/work";
 
 const WorkDetail: React.FC = () => {
@@ -76,22 +85,44 @@ const WorkDetail: React.FC = () => {
           boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
         }}
       >
+        <CardContent>
+          <Typography variant="h4" gutterBottom>
+            {workDetails.tenCongViec}
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "1rem",
+            }}
+          >
+            <Avatar
+              src={workDetails.avatar || "https://via.placeholder.com/150"}
+              alt={workDetails.tenNguoiTao}
+              sx={{ marginRight: "1rem" }}
+            />
+            <Box>
+              <Typography variant="h6">
+                {workDetails.tenNguoiTao || "Unknown Creator"}
+              </Typography>
+              <Rating
+                value={workDetails.saoCongViec || 0}
+                readOnly
+                precision={0.1}
+                sx={{ marginBottom: "0.5rem" }}
+              />
+              <Typography variant="body2">
+                {workDetails.danhGia || 0} reviews
+              </Typography>
+            </Box>
+          </Box>
+        </CardContent>
         <CardMedia
           component="img"
           height="400"
           image={workDetails.hinhAnh || "https://via.placeholder.com/400"}
           alt={workDetails.tenCongViec}
         />
-        <CardContent>
-          <Typography variant="h4">{workDetails.tenCongViec}</Typography>
-          <Typography variant="body1">{workDetails.moTa}</Typography>
-          <Typography variant="h6" sx={{ mt: 2 }}>
-            Price: ${workDetails.giaTien}
-          </Typography>
-          <Typography variant="h6" sx={{ mt: 1 }}>
-            Rating: {workDetails.saoCongViec} / 5
-          </Typography>
-        </CardContent>
       </Card>
     </Box>
   );
